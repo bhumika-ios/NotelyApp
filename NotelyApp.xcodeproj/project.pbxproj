@@ -15,6 +15,8 @@
 		ACB227902AE8E27300AB3C91 /* NotelyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2278F2AE8E27300AB3C91 /* NotelyAppTests.swift */; };
 		ACB2279A2AE8E27400AB3C91 /* NotelyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227992AE8E27400AB3C91 /* NotelyAppUITests.swift */; };
 		ACB2279C2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2279B2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift */; };
+		ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227A92AE8E32F00AB3C91 /* Note.swift */; };
+		ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		ACB227952AE8E27400AB3C91 /* NotelyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotelyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB227992AE8E27400AB3C91 /* NotelyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotelyAppUITests.swift; sourceTree = "<group>"; };
 		ACB2279B2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotelyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ACB227A92AE8E32F00AB3C91 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,9 @@
 		ACB2277B2AE8E27200AB3C91 /* NotelyApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACB227A82AE8E31400AB3C91 /* Model */,
 				ACB2277C2AE8E27200AB3C91 /* NotelyAppApp.swift */,
 				ACB2277E2AE8E27200AB3C91 /* ContentView.swift */,
-				ACB227802AE8E27200AB3C91 /* Item.swift */,
 				ACB227822AE8E27300AB3C91 /* Assets.xcassets */,
 				ACB227842AE8E27300AB3C91 /* Preview Content */,
 			);
@@ -128,6 +132,16 @@
 				ACB2279B2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift */,
 			);
 			path = NotelyAppUITests;
+			sourceTree = "<group>";
+		};
+		ACB227A82AE8E31400AB3C91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACB227802AE8E27200AB3C91 /* Item.swift */,
+				ACB227A92AE8E32F00AB3C91 /* Note.swift */,
+				ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +276,9 @@
 			files = (
 				ACB2277F2AE8E27200AB3C91 /* ContentView.swift in Sources */,
 				ACB227812AE8E27200AB3C91 /* Item.swift in Sources */,
+				ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */,
 				ACB2277D2AE8E27200AB3C91 /* NotelyAppApp.swift in Sources */,
+				ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
