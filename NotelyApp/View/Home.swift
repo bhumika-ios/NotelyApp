@@ -120,9 +120,10 @@ struct Home: View {
                         Button("", systemImage: "plus"){
                             
                         }
-                        Button("", systemImage: isDark ? "sun.min" : "moon"){
+                        Button("", systemImage: isDark ? "moon" : "sun.min"){
                             isDark.toggle()
                         }
+                        .contentTransition(.symbolEffect(.replace))
                     }
                 }
             }
