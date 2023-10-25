@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		ACB2277D2AE8E27200AB3C91 /* NotelyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2277C2AE8E27200AB3C91 /* NotelyAppApp.swift */; };
 		ACB2277F2AE8E27200AB3C91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2277E2AE8E27200AB3C91 /* ContentView.swift */; };
-		ACB227812AE8E27200AB3C91 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227802AE8E27200AB3C91 /* Item.swift */; };
 		ACB227832AE8E27300AB3C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB227822AE8E27300AB3C91 /* Assets.xcassets */; };
 		ACB227862AE8E27300AB3C91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB227852AE8E27300AB3C91 /* Preview Assets.xcassets */; };
 		ACB227902AE8E27300AB3C91 /* NotelyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2278F2AE8E27300AB3C91 /* NotelyAppTests.swift */; };
@@ -17,6 +16,7 @@
 		ACB2279C2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2279B2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift */; };
 		ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227A92AE8E32F00AB3C91 /* Note.swift */; };
 		ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */; };
+		ACB227B02AE8EAC800AB3C91 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227AF2AE8EAC800AB3C91 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		ACB227792AE8E27200AB3C91 /* NotelyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotelyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB2277C2AE8E27200AB3C91 /* NotelyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotelyAppApp.swift; sourceTree = "<group>"; };
 		ACB2277E2AE8E27200AB3C91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		ACB227802AE8E27200AB3C91 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		ACB227822AE8E27300AB3C91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB227852AE8E27300AB3C91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACB2278B2AE8E27300AB3C91 /* NotelyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotelyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +49,7 @@
 		ACB2279B2AE8E27400AB3C91 /* NotelyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotelyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACB227A92AE8E32F00AB3C91 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGroup.swift; sourceTree = "<group>"; };
+		ACB227AF2AE8EAC800AB3C91 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,7 @@
 		ACB2277B2AE8E27200AB3C91 /* NotelyApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACB227AE2AE8EAB300AB3C91 /* View */,
 				ACB227A82AE8E31400AB3C91 /* Model */,
 				ACB2277C2AE8E27200AB3C91 /* NotelyAppApp.swift */,
 				ACB2277E2AE8E27200AB3C91 /* ContentView.swift */,
@@ -137,11 +138,18 @@
 		ACB227A82AE8E31400AB3C91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ACB227802AE8E27200AB3C91 /* Item.swift */,
 				ACB227A92AE8E32F00AB3C91 /* Note.swift */,
 				ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB227AE2AE8EAB300AB3C91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACB227AF2AE8EAC800AB3C91 /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB2277F2AE8E27200AB3C91 /* ContentView.swift in Sources */,
-				ACB227812AE8E27200AB3C91 /* Item.swift in Sources */,
 				ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */,
+				ACB227B02AE8EAC800AB3C91 /* Home.swift in Sources */,
 				ACB2277D2AE8E27200AB3C91 /* NotelyAppApp.swift in Sources */,
 				ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */,
 			);

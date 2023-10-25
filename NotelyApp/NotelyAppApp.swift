@@ -10,23 +10,16 @@ import SwiftData
 
 @main
 struct NotelyAppApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //frame set of mac
+            .frame(minWidth: 320, minHeight: 400)
         }
-        .modelContainer(sharedModelContainer)
+        //.windowResizability(.contentSize)
+        //add data model to the app
+        // now that we have successfully set up the persistence data model for our app,let's start building of UI
+        .modelContainer(for: [Note.self, NoteGroup.self])
     }
 }

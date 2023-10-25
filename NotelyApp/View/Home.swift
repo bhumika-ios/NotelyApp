@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct Home: View {
+    @State private var selected: String?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationSplitView{
+            List(selection: $selected){
+                Text("All Notes")
+                    .tag("All Notes")
+                Text("Bookmark")
+                    .tag("Bookmark")
+                
+                // create group
+                
+                Section{
+                    
+                } header: {
+                    HStack(spacing: 5){
+                        Text("Group")
+                        Button("", systemImage: "plus"){
+                            
+                        }
+                        .tint(Color.gray)
+                        .buttonStyle(.plain)
+                    
+                    }
+                }
+            }
+        } detail: {
+            
+        }
+        .navigationTitle(selected ?? "Notes")
     }
 }
 
 #Preview {
-    Home()
+    ContentView()
 }
