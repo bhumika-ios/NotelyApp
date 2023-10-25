@@ -17,6 +17,8 @@
 		ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227A92AE8E32F00AB3C91 /* Note.swift */; };
 		ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */; };
 		ACB227B02AE8EAC800AB3C91 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227AF2AE8EAC800AB3C91 /* Home.swift */; };
+		ACB227B22AE91F0C00AB3C91 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227B12AE91F0C00AB3C91 /* NoteView.swift */; };
+		ACB227B42AE9234A00AB3C91 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB227B32AE9234900AB3C91 /* NoteCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		ACB227A92AE8E32F00AB3C91 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		ACB227AB2AE8E40C00AB3C91 /* NoteGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGroup.swift; sourceTree = "<group>"; };
 		ACB227AF2AE8EAC800AB3C91 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		ACB227B12AE91F0C00AB3C91 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		ACB227B32AE9234900AB3C91 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				ACB227AF2AE8EAC800AB3C91 /* Home.swift */,
+				ACB227B12AE91F0C00AB3C91 /* NoteView.swift */,
+				ACB227B32AE9234900AB3C91 /* NoteCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +290,8 @@
 			files = (
 				ACB2277F2AE8E27200AB3C91 /* ContentView.swift in Sources */,
 				ACB227AC2AE8E40C00AB3C91 /* NoteGroup.swift in Sources */,
+				ACB227B22AE91F0C00AB3C91 /* NoteView.swift in Sources */,
+				ACB227B42AE9234A00AB3C91 /* NoteCardView.swift in Sources */,
 				ACB227B02AE8EAC800AB3C91 /* Home.swift in Sources */,
 				ACB2277D2AE8E27200AB3C91 /* NotelyAppApp.swift in Sources */,
 				ACB227AA2AE8E32F00AB3C91 /* Note.swift in Sources */,

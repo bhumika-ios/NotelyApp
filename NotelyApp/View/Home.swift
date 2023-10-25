@@ -23,7 +23,7 @@ struct Home: View {
     //Model
     @Environment(\.modelContext) private var context
     var body: some View {
-        NavigationStack{
+        NavigationSplitView{
             List(selection: $selected){
                 Text("All Notes")
                     .tag("All Notes")
@@ -118,7 +118,8 @@ struct Home: View {
                 ToolbarItem(placement: .primaryAction) {
                     HStack(spacing: 10){
                         Button("", systemImage: "plus"){
-                            
+                            let note = Note(content: "")
+                            context.insert(note)
                         }
                         Button("", systemImage: isDark ? "moon" : "sun.min"){
                             isDark.toggle()
@@ -128,7 +129,10 @@ struct Home: View {
                 }
             }
             .preferredColorScheme(isDark ? .light : .dark)
+        } detail: {
+            NoteView(group: selected, allGroup: group)
         }
+        
         
     }
 }
