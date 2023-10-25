@@ -26,6 +26,7 @@ struct NoteView: View {
         _notes = Query(filter: finalPredicate, sort: [], animation: .snappy)
     }
     @FocusState private var isKeyboardEnabled : Bool
+    @Environment(\.modelContext) private var context
     var body: some View {
         
         GeometryReader{
@@ -57,10 +58,15 @@ struct NoteView: View {
                                             }
                                         }
                                     }
+                                    Button("Remove from Group") {
+                                        note.group = nil
+                                    }
                                 } label: {
                                     Text("Group")
                                 }
-                                
+                                Button("Delete", role: .destructive) {
+                                context.delete (note)
+                                }
                             }
                     }
                     
