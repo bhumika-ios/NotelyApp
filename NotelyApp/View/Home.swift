@@ -16,10 +16,14 @@ struct Home: View {
     //view property
     @State private var addGroup: Bool = false
     @State private var groupTitle: String = ""
+    @State private var requestedGroup: NoteGroup?
+    @State private var deleteRequest: Bool = false
+    @State private var renameRequest: Bool = false
+    @State private var isDark: Bool = true
     //Model
     @Environment(\.modelContext) private var context
     var body: some View {
-        NavigationSplitView{
+        NavigationStack{
             List(selection: $selected){
                 Text("All Notes")
                     .tag("All Notes")
@@ -31,10 +35,23 @@ struct Home: View {
                 // create group
                 
                 Section{
-                    ForEach(group){
-                        Text($0.groupTitle)
-                            .tag($0.groupTitle)
-                            .foregroundStyle(selected == $0.groupTitle ? Color.primary : .gray)
+                    ForEach(group){ group in
+                        Text(group.groupTitle)
+                            .tag(group.groupTitle)
+                            .foregroundStyle(selected == group.groupTitle ? Color.primary : .gray)
+                        
+                            .contextMenu{
+                                Button("Rename"){
+                                    groupTitle = group.groupTitle
+                                    requestedGroup = group
+                                    renameRequest = true
+                                }
+                                Button("Delete"){
+                                    groupTitle = group.groupTitle
+                                    requestedGroup = group
+                                    deleteRequest = true
+                                }
+                            }
                     }
                 } header: {
                     HStack(spacing: 5){
@@ -48,24 +65,70 @@ struct Home: View {
                     }
                 }
             }
-        } detail: {
-            
-        }
-        .navigationTitle(selected ?? "Notes")
-        .alert("Add Group", isPresented: $addGroup) {
-            TextField("Record", text: $groupTitle)
-            
-            Button("Cancel", role: .cancel){
-                groupTitle = ""
+            .navigationTitle(selected ?? "Notes")
+            .alert("Add Group", isPresented: $addGroup) {
+                TextField("Record", text: $groupTitle)
                 
+                Button("Cancel", role: .cancel){
+                    groupTitle = ""
+                    
+                }
+                
+                Button("Add") {
+                    let group = NoteGroup(groupTitle: groupTitle)
+                    context.insert(group)
+                    groupTitle = ""
+                }
             }
-            
-            Button("Add") {
-                let group = NoteGroup(groupTitle: groupTitle)
-                context.insert(group)
-                groupTitle = ""
+            //rename
+            .alert("Rename Group", isPresented: $renameRequest) {
+                TextField("Record", text: $groupTitle)
+                
+                Button("Cancel", role: .cancel){
+                    groupTitle = ""
+                    requestedGroup = nil
+                    
+                }
+                
+                Button("Rename") {
+                    if let requestedGroup {
+                        requestedGroup.groupTitle = groupTitle
+                        groupTitle = ""
+                        self.requestedGroup = nil
+                    }
+                }
             }
+            //delete
+            .alert("Are you sure to delete \(groupTitle) Group?", isPresented: $deleteRequest) {
+                Button("Cancel", role: .cancel){
+                    groupTitle = ""
+                    requestedGroup = nil
+                    
+                }
+                
+                Button("Delete", role: .destructive) {
+                    if let requestedGroup {
+                        context.delete(requestedGroup)
+                        groupTitle = ""
+                        self.requestedGroup = nil
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    HStack(spacing: 10){
+                        Button("", systemImage: "plus"){
+                            
+                        }
+                        Button("", systemImage: isDark ? "sun.min" : "moon"){
+                            isDark.toggle()
+                        }
+                    }
+                }
+            }
+            .preferredColorScheme(isDark ? .light : .dark)
         }
+        
     }
 }
 
